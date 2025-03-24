@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dumplings Plate - Order Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            max-width: 720px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff7ec;
+            color: #2c2c2c;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #000;
+        }
+        label, input, select {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 12px 20px;
+            margin: 15px 0;
+            background-color: #000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #333;
+        }
+        .result, .payment {
+            background: #f5f0e8;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 180px;
+            border-radius: 50%;
+        }
+        .logos img {
+            height: 30px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo">
+        <img src="https://i.ibb.co/7YC9bY0/dumplings-logo.png" alt="Dumplings Plate Logo" />
+    </div>
+
+    <h1>Dumplings Plate - Order Form</h1>
+
+    <label>Customer Name:</label>
+    <input type="text" id="customerName" placeholder="e.g. Ali Khan" />
+
+    <label>Phone Number:</label>
+    <input type="text" id="phoneNumber" placeholder="e.g. 03001234567" />
+
+    <label>Complete Address:</label>
+    <input type="text" id="address" placeholder="House #, Street, Area" />
+
+    <label>Preferred Delivery Date:</label>
+    <input type="date" id="deliveryDate" />
+
+    <label>Preferred Delivery Time:</label>
+<small style="color: #555;">* Orders are delivered between 12:00 PM and 2:00 AM</small>
+    <input type="time" id="deliveryTime" />
+
+    <label>Distance from Vendor (in km):</label>
+    <input type="number" id="distanceKm" placeholder="e.g. 5" />
+
+<small style="color: #555;">
+    * Check the distance using the <a href="https://www.google.com/maps/search/?api=1&query=FC58%2BFQ4+Lahore%2C+Pakistan" target="_blank">Vendor Location</a> before entering it above.
+</small>
+
+
+    <h2>Dumplings</h2>
+    <label>Beef Dumplings (Rs. 100 each):</label>
+    <input type="number" id="beefQty" placeholder="e.g. 5" />
+
+    <label>Chicken Dumplings (Rs. 90 each):</label>
+    <input type="number" id="chickenQty" placeholder="e.g. 10" />
+
+    
+
+    
+<h2>Combo Deals</h2>
+<label>Duo Delight Chicken Dumplings (15 pcs for 2) - Rs. 1350</label>
+<input type="number" id="duoDelight" placeholder="e.g. 1" />
+<label>Twenty Temptations Chicken Dumplings (20 pcs) - Rs. 1800</label>
+<input type="number" id="twentyTemp" placeholder="e.g. 1" />
+<label>Family Box Chicken Dumplings (40 pcs) - Rs. 3600</label>
+<input type="number" id="familyBox" placeholder="e.g. 1" />
+<label>Solo Combo Chicken Noodles & Dumplings - Rs. 1340</label>
+<input type="number" id="soloCombo" placeholder="e.g. 1" />
+
+<h2>Chicken Dumplings</h2>
+<label>Petite Pleasure Dumplings (4 pcs) - Rs. 360</label>
+<input type="number" id="petite" placeholder="e.g. 1" />
+<label>Savory Symphony Dumplings (6 pcs) - Rs. 540</label>
+<input type="number" id="symphony" placeholder="e.g. 1" />
+<label>Epicurean Eights Dumplings (8 pcs) - Rs. 720</label>
+<input type="number" id="epicurean" placeholder="e.g. 1" />
+<label>Perfect Ten Dumplings (10 pcs) - Rs. 900</label>
+<input type="number" id="perfectTen" placeholder="e.g. 1" />
+
+<h2>Mini Morsel Dumpling Bites</h2>
+<label>Petite Sampler Chicken Dumplings (10 pcs) - Rs. 550</label>
+<input type="number" id="petiteSampler" placeholder="e.g. 1" />
+<label>Double Mini Morsels Chicken Dumplings (20 pcs) - Rs. 900</label>
+<input type="number" id="doubleMini" placeholder="e.g. 1" />
+<label>Triple Mini Morsel Chicken Dumplings (30 pcs) - Rs. 1250</label>
+<input type="number" id="tripleMini" placeholder="e.g. 1" />
+<label>Family Feast of Mini Chicken Dumplings (40 pcs) - Rs. 1600</label>
+<input type="number" id="familyFeast" placeholder="e.g. 1" />
+
+<h2>Beverages</h2>
+<label>Pepsi 250ml - Rs. 90</label>
+<input type="number" id="pepsi" placeholder="e.g. 1" />
+<label>Sprite 250ml - Rs. 100</label>
+<input type="number" id="sprite" placeholder="e.g. 1" />
+<label>Coca Cola 250ml - Rs. 100</label>
+<input type="number" id="coke" placeholder="e.g. 1" />
+
+<h2>Sides & Add-ons</h2>
+<label><input type="checkbox" id="thickChiliSauce1" /> Dumpling Special Thick Chili Sauce (Rs. 50)</label>
+<label><input type="checkbox" id="chiliOilSauce1" /> Chili Oil Sauce (Rs. 50)</label>
+
+<label><input type="checkbox" id="cutlery" /> Cutlery (Rs. 80)</label>
+
+<button onclick="calculateAndSend()">Generate & Send on WhatsApp</button>
+
+    <div class="result" id="output"></div>
+
+    <div class="payment">
+        <h2>Vendor Location</h2>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=FC58%2BFQ4+Lahore%2C+Pakistan" target="_blank">
+            View Vendor Location (FC58+FQ4 Lahore, Pakistan)</a></p>
+
+        <h2>Payment Details</h2>
+        <p><strong>Bank:</strong> HBL<br>
+        <strong>Account No:</strong> 05947901887203<br>
+        <strong>Title:</strong> Zain Ul Hassan</p>
+
+        <div class="logos">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Easypaisa_logo.png" alt="Easypaisa">
+            <img src="https://seeklogo.com/images/J/jazz-cash-logo-BB51A7C16F-seeklogo.com.png" alt="JazzCash">
+        </div>
+        <p><strong>Number:</strong> 0311-4503785<br>
+        <strong>Name:</strong> Zain Ul Hassan</p>
+    </div>
+
+    <h2>Final Order Summary</h2>
+    <textarea id="finalMessage" readonly></textarea>
+
+    
+
+
+
+
+<script>
+function calculateAndSend() {
+    const name = document.getElementById('customerName').value.trim();
+    const phone = document.getElementById('phoneNumber').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const deliveryDate = document.getElementById('deliveryDate').value;
+    const deliveryTime = document.getElementById('deliveryTime').value;
+    const distanceKm = parseFloat(document.getElementById('distanceKm').value) || 0;
+
+    const beefQty = parseInt(document.getElementById('beefQty').value) || 0;
+    const chickenQty = parseInt(document.getElementById('chickenQty').value) || 0;
+    const sauce1 = document.getElementById('thickChiliSauce1').checked;
+    const sauce2 = document.getElementById('chiliOilSauce1').checked;
+
+    const beefPrice = 100, chickenPrice = 90, deliveryRate = 30;
+    const beefTotal = beefQty * beefPrice;
+    const chickenTotal = chickenQty * chickenPrice;
+
+    const duoQty = parseInt(document.getElementById('duoDelight').value) || 0;
+    const twentyQty = parseInt(document.getElementById('twentyTemp').value) || 0;
+    const familyBoxQty = parseInt(document.getElementById('familyBox').value) || 0;
+    const soloComboQty = parseInt(document.getElementById('soloCombo').value) || 0;
+
+    const petiteQty = parseInt(document.getElementById('petite').value) || 0;
+    const symphonyQty = parseInt(document.getElementById('symphony').value) || 0;
+    const epicureanQty = parseInt(document.getElementById('epicurean').value) || 0;
+    const perfectTenQty = parseInt(document.getElementById('perfectTen').value) || 0;
+
+    const petiteSamplerQty = parseInt(document.getElementById('petiteSampler').value) || 0;
+    const doubleMiniQty = parseInt(document.getElementById('doubleMini').value) || 0;
+    const tripleMiniQty = parseInt(document.getElementById('tripleMini').value) || 0;
+    const familyFeastQty = parseInt(document.getElementById('familyFeast').value) || 0;
+
+    const pepsiQty = parseInt(document.getElementById('pepsi').value) || 0;
+    const spriteQty = parseInt(document.getElementById('sprite').value) || 0;
+    const cokeQty = parseInt(document.getElementById('coke').value) || 0;
+
+    const cutlery = document.getElementById('cutlery').checked;
+
+    const duoTotal = duoQty * 1350;
+    const twentyTotal = twentyQty * 1800;
+    const familyBoxTotal = familyBoxQty * 3600;
+    const soloComboTotal = soloComboQty * 1340;
+    const petiteTotal = petiteQty * 360;
+    const symphonyTotal = symphonyQty * 540;
+    const epicureanTotal = epicureanQty * 720;
+    const perfectTenTotal = perfectTenQty * 900;
+    const petiteSamplerTotal = petiteSamplerQty * 550;
+    const doubleMiniTotal = doubleMiniQty * 900;
+    const tripleMiniTotal = tripleMiniQty * 1250;
+    const familyFeastTotal = familyFeastQty * 1600;
+    const pepsiTotal = pepsiQty * 90;
+    const spriteTotal = spriteQty * 100;
+    const cokeTotal = cokeQty * 100;
+    const saucesTotal = (sauce1 ? 50 : 0) + (sauce2 ? 50 : 0) + (cutlery ? 80 : 0);
+    const deliveryCharge = Math.round(distanceKm * deliveryRate);
+
+    const grandTotal = beefTotal + chickenTotal +
+        duoTotal + twentyTotal + familyBoxTotal + soloComboTotal +
+        petiteTotal + symphonyTotal + epicureanTotal + perfectTenTotal +
+        petiteSamplerTotal + doubleMiniTotal + tripleMiniTotal + familyFeastTotal +
+        pepsiTotal + spriteTotal + cokeTotal + saucesTotal + deliveryCharge;
+
+    const summary = 
+`*Customer Name:* ${name}
+*Phone:* ${phone}
+*Address:* ${address}
+*Delivery Date:* ${deliveryDate}
+*Delivery Time:* ${deliveryTime}
+*Distance:* ${distanceKm} km
+
+*Order Details:*
+Beef Dumplings: ${beefQty} x Rs. 100 = Rs. ${beefTotal}
+Chicken Dumplings: ${chickenQty} x Rs. 90 = Rs. ${chickenTotal}
+${duoQty > 0 ? "Duo Delight: " + duoQty + " x 1350 = Rs. " + duoTotal : ""}
+${twentyQty > 0 ? "\n20 Temptations: " + twentyQty + " x 1800 = Rs. " + twentyTotal : ""}
+${familyBoxQty > 0 ? "\nFamily Box: " + familyBoxQty + " x 3600 = Rs. " + familyBoxTotal : ""}
+${soloComboQty > 0 ? "\nSolo Combo: " + soloComboQty + " x 1340 = Rs. " + soloComboTotal : ""}
+${petiteQty > 0 ? "\nPetite Pleasure: " + petiteQty + " x 360 = Rs. " + petiteTotal : ""}
+${symphonyQty > 0 ? "\nSavory Symphony: " + symphonyQty + " x 540 = Rs. " + symphonyTotal : ""}
+${epicureanQty > 0 ? "\nEpicurean Eights: " + epicureanQty + " x 720 = Rs. " + epicureanTotal : ""}
+${perfectTenQty > 0 ? "\nPerfect Ten: " + perfectTenQty + " x 900 = Rs. " + perfectTenTotal : ""}
+${petiteSamplerQty > 0 ? "\nPetite Sampler: " + petiteSamplerQty + " x 550 = Rs. " + petiteSamplerTotal : ""}
+${doubleMiniQty > 0 ? "\nDouble Mini: " + doubleMiniQty + " x 900 = Rs. " + doubleMiniTotal : ""}
+${tripleMiniQty > 0 ? "\nTriple Mini: " + tripleMiniQty + " x 1250 = Rs. " + tripleMiniTotal : ""}
+${familyFeastQty > 0 ? "\nFamily Feast: " + familyFeastQty + " x 1600 = Rs. " + familyFeastTotal : ""}
+${pepsiQty > 0 ? "\nPepsi: " + pepsiQty + " x 90 = Rs. " + pepsiTotal : ""}
+${spriteQty > 0 ? "\nSprite: " + spriteQty + " x 100 = Rs. " + spriteTotal : ""}
+${cokeQty > 0 ? "\nCoca Cola: " + cokeQty + " x 100 = Rs. " + cokeTotal : ""}
+${sauce1 ? "\nThick Chili Sauce: Rs. 50" : ""}
+${sauce2 ? "\nChili Oil Sauce: Rs. 50" : ""}
+${cutlery ? "\nCutlery: Rs. 80" : ""}
+
+*Delivery Charges:* Rs. ${deliveryCharge}
+
+*Total Amount Payable:* Rs. ${grandTotal}
+
+*Payment Options:*
+Bank: HBL
+Account No: 05947901887203
+Account Title: Zain Ul Hassan
+Easypaisa / JazzCash: 0311-4503785 (Zain Ul Hassan)
+Map: https://www.google.com/maps/search/?api=1&query=FC58%2BFQ4+Lahore%2C+Pakistan`;
+
+    document.getElementById('output').innerHTML = "<pre>" + summary + "</pre>";
+    document.getElementById('finalMessage').value = summary;
+
+    const message = encodeURIComponent(summary);
+    const vendorNumber = "923114503785";
+    const whatsappURL = `https://wa.me/${vendorNumber}?text=${message}`;
+    window.open(whatsappURL, "_blank");
+}
+</script>
+
+</body>
+</html>
